@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="product-shoe-info editContent text-center mt-lg-4">
+    <div class="row">
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">Номер телефона</th>
+                <th scope="col">ФИО</th>
+                <th scope="col">Город</th>
+                <th scope="col">Адрес</th>
+                <th scope="col">Email</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for phone in phone_list %}
+            <tr>
+                <td>{{ phone.phonenumber }}</td>
+                <td>{{ phone.name }}</td>
+                <td>{{ phone.city }}</td>
+                <td>{{ phone.adress }}</td>
+                <td>{{ phone.email }}</td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <div class="grid-img-right mt-4 text-right bg bg1">
+        {% include 'pagination.html' %}
+    </div>
+
+</div>
+{% endblock content %}
